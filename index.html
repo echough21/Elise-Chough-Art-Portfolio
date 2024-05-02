@@ -14,9 +14,9 @@
     font-family: 'Gluten', sans-serif;
     background: white;
     color: black;
-    padding: 15.2px; /* Padding around the content */
-    text-align: center; /* Center align the text */
-    font-size: 50px; /* Adjust font size */
+    padding: 15.2px; 
+    text-align: center; 
+    font-size: 50px; 
     animation: pulse 8s infinite;
     margin-bottom: 0;
     margin-top: 20px;
@@ -34,9 +34,9 @@
   font-family: 'Gluten', sans-serif;
   background: white;
   color: rgb(255, 105, 180);
-  padding: 6px; /* Padding around the content */
-  text-align: center; /* Center align the text */
-  font-size: 50px; /* Adjust font size */
+  padding: 6px; 
+  text-align: center; 
+  font-size: 50px; 
   animation: pulse 8s infinite;
 }
 
@@ -55,30 +55,30 @@
   }
 
 body {
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Add 20px padding on the left and right sides */
+  margin: 0; 
+  padding: 0;
 }
 
 .image-grid {
-  column-count: 4; /* Set number of columns */
-  column-gap: 20px; /* Set gap between columns */
-  padding: 20px; /* Add padding around the grid */
+  column-count: 4; 
+  column-gap: 20px; 
+  padding: 20px; 
   padding-top: 15px;
   background-color: white;
-  max-width: 1800px; /* Limit maximum width */
-  margin: 0 auto; /* Center align the grid */
-  }
+  max-width: 1800px; 
+  margin: 0 auto; 
+}
 
 .image-grid img {
   width: 100%;
   display: block;
-  margin-bottom: 20px; /* Add margin between images */
+  margin-bottom: 20px; 
   }
 
 
 @media (min-width: 768px) {
   .image-grid {
-    grid-template-columns: repeat(4, 1fr); /* Display 4 images in each row on larger screens */
+    grid-template-columns: repeat(4, 1fr); 
   }
 }
 
@@ -105,8 +105,8 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
+  justify-content: center; 
+  align-items: center; 
 }
 
 .enlarged-image {
@@ -167,7 +167,7 @@ footer {
 }
 .email {
     font-size: 35px;
-    margin-bottom: 10px; /* Adjust the margin-bottom value as needed */
+    margin-bottom: 10px; 
 }
 
 .phone {
@@ -265,21 +265,17 @@ footer {
 
         clickableImages.forEach(image => {
             image.addEventListener('click', function() {
-                // Create overlay div
                 const overlay = document.createElement('div');
                 overlay.classList.add('overlay');
 
-                // Create enlargedImage and set its properties
                 const enlargedImage = document.createElement('img');
                 enlargedImage.src = this.src;
                 enlargedImage.alt = this.alt;
 
-                // Create caption and set its properties
                 const captionDiv = document.createElement('div');
                 captionDiv.classList.add('caption');
                 captionDiv.textContent = this.dataset.caption;
 
-                // Set styles for overlay and enlargedImage
                 overlay.style.position = 'fixed';
                 overlay.style.top = '0';
                 overlay.style.left = '0';
@@ -291,21 +287,17 @@ footer {
                 overlay.style.justifyContent = 'center';
                 enlargedImage.style.maxWidth = '90%';
                 enlargedImage.style.maxHeight = '90%';
-                enlargedImage.style.zIndex = '9999'; // Set higher z-index
+                enlargedImage.style.zIndex = '9999'; 
 
-                // Append enlargedImage and caption to overlay
                 overlay.appendChild(enlargedImage);
                 overlay.appendChild(captionDiv);
 
-                // Append overlay to body
                 document.body.appendChild(overlay);
 
-                // Animate caption opacity
                 setTimeout(() => {
                     captionDiv.style.opacity = 1;
-                }, 100); // Delay the animation slightly to ensure it runs after the overlay is appended
+                }, 100);
 
-                // Add event listener to remove overlay when clicked outside the image
                 overlay.addEventListener('click', function(e) {
                     if (e.target === this) {
                         this.remove();
